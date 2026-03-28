@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Code') {
-            steps {
-                git 'https://github.com/ItsTechUtsav/URL_Shortener.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t url-shortener .'
