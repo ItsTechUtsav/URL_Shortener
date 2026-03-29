@@ -11,19 +11,19 @@ pipeline {
 
         stage('Tag Image') {
             steps {
-                sh 'docker tag url-shortener itsTechUtsav/url-shortener'
+                sh 'docker tag url-shortener itstechutsav/url-shortener'
             }
         }
 
         stage('Push to DockerHub') {
             steps {
-                sh 'docker push itsTechUtsav/url-shortener'
+                sh 'docker push itstechutsav/url-shortener'
             }
         }
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 3000:3000 itsTechUtsav/url-shortener'
+                sh 'docker run -d -p 3000:3000 itstechutsav/url-shortener'
             }
         }
     }
