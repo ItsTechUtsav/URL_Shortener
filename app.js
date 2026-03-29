@@ -8,7 +8,7 @@ const urlDatabase = {};
 
 // Home route
 app.get("/", (req, res) => {
-  res.send("URL Shortener is running ");
+  res.send("URL Shortener is running and ready to shorten your URLs!");
 });
 
 // Create short URL
