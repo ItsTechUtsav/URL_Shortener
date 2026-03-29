@@ -15,6 +15,15 @@ pipeline {
             }
         }
 
+        stage('Remove Old Container') {
+            steps {
+                sh '''
+                    docker stop $(docker ps -q) || true
+                    docker rm $(docker ps -aq) || true
+                    '''
+            }
+        }
+
         stage('Push to DockerHub') {
             steps {
                 sh 'docker push itstechutsav/url-shortener'
